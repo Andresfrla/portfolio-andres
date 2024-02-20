@@ -1,0 +1,151 @@
+---
+import React from './icons/ReactJs.astro'
+import Html from './icons/HTML.astro'
+import Css from './icons/Css.astro'
+import MongoDB from './icons/MongoDB.astro'
+import Node from './icons/Node.astro'
+import Handlebars from './icons/Handlebars.astro'
+import Vite from './icons/Vite.astro'
+import Github from './icons/Github.astro'
+import Link from './icons/Link.astro'
+import Tailwind from './icons/Tailwind.astro'
+import Typescript from './icons/Typescript.astro'
+import Nextjs from './icons/Nextjs.astro'
+
+const TAGS = {
+    REACT: {
+        name: "React.Js",
+        class: "bg-blue-900 text-red",
+        icon: React,
+    },
+    TYPESCRIPT: {
+        name: "TypeScript",
+        class: "bg-zinc-100 text-blue",
+        icon: Typescript,
+    },
+    NEXTJS: {
+        name: "Next Js",
+        class: "bg-zinc-100 text-black",
+        icon: Nextjs,
+    },
+    HTML: {
+        name: "HTML",
+        class: "bg-amber-800 text-white",
+        icon: Html,
+    },
+    CSS: {
+        name: "CSS",
+        class: "bg-sky-950 text-white",
+        icon: Css,
+    },
+    TAILWIND: {
+        name: "Tailwind",
+        class: "bg-black-600 text-white",
+        icon: Tailwind,
+    },
+    MONGODB: {
+        name: "MongoDB",
+        class: "bg-green-700 text-white",
+        icon: MongoDB,
+    },
+    NODEJS: {
+        name: "Node.js",
+        class: "bg-white text-emerald-600",
+        icon: Node,
+    },
+    HANDLEBARS: {
+        name: "Handlebars",
+        class: "bg-white text-black",
+        icon: Handlebars,
+    },
+    VITE: {
+        name: "Vite",
+        class: "bg-black text-white",
+        icon: Vite
+    },
+}
+
+const PROJECTS = [
+    {
+        title: 'DigitalHippo',
+        description: 'Created from scratch with React and Next.Js.Developed a full-stack RESTful application that is a Ecommerce where you can buy and sell assets of quality.',
+        link: 'https://digitalhippo-final.up.railway.app/',
+        github: 'https://github.com/Andresfrla/digital_hippo',
+        image: '/projects/digital-hippo.webp',
+        tags: [TAGS.REACT, TAGS.NEXTJS, TAGS.MONGODB, TAGS.TAILWIND],
+    },
+    {
+        title: 'LOL-Wiki',
+        description: 'This project is a dynamic app designed to tap into the League of Legends API. Developed using Bootstrap and Handlebars, the app presents a user-friendly interface that brings detailed game insights to the players',
+        link: '',
+        github: 'https://github.com/Andresfrla/LOL-Wiki',
+        image: '/projects/LOL.webp',
+        tags: [TAGS.HANDLEBARS, TAGS.HTML, TAGS.CSS]
+    },
+    {
+        title: 'Vampire VS Zombies',
+        description: 'Navigate a world where a vampire avoids zombies using canvas-rendered visuals. Consume pumpkins to transform and turn the undead into your prey. A captivating game crafted with HTML, CSS, and JavaScript.',
+        link: 'https://andresfrla.github.io/vampires-vs-zombies/',
+        github: 'https://github.com/Andresfrla/vampires-vs-zombies',
+        image: '/projects/vampires.webp',
+        tags: [TAGS.HTML, TAGS.CSS]
+    },
+    {
+        title: 'Youtube Clone',
+        description: 'Using the integration of an API to search diferent videos I make an app to have different categories and videos to show.',
+        link: 'https://celadon-dieffenbachia-3463e0.netlify.app/',
+        github: 'https://github.com/Andresfrla/youtube_clone',
+        image: '/projects/youtube.webp',
+        tags: [TAGS.REACT, TAGS.HTML, TAGS.CSS],
+    },
+]
+---
+
+{
+    PROJECTS.map(({ title, description, tags, image, link, github }) => (
+        <article>
+            <h3 class="text-2xl font-semibold text-yellow-200 mb-2">{title}</h3>
+            <p class="text-lg mb-4 text-pretty text-justify">{description}</p>
+            <p class="text-red-300/90">Used technologies:</p>
+            <ul class="flex gap-x-2 lg:flex-row mb-2 sm:flex-wrap">
+                
+                {tags.map((tag) => (
+                    <li>
+                        <span class={`flex flex-wrap gap-x-2 rounded-full sm:text-xxs md:text-s mb-2 mt-3 ${tag.class} py-1 px-2`}>
+                            <tag.icon class={`size-5 ${'sm:text-xxs'}`} />
+                            {tag.name}
+                        </span>
+                    </li>
+                ))}
+            </ul>
+            <img class="rounded shadow-2xl shadow-white/20 mb-10" src={image} alt={`Screenshot of the project ${title}`} />
+            <div class="items-center flex justify-center mb-5">
+        {link && (
+            <div class="flex items-center justify-center mr-20">
+                <h3 class="mr-2">Link:</h3>
+                <a href={link} class="flex items-center justify-center rounded-full text-s bg-blue-500 text-white py-1 px-2">
+                    <div class="rounded-full bg-white p-2 mr-2 hover:scale-110">
+                        <Link class="size-5 text-blue-500" />
+                    </div>
+                </a>
+            </div>
+        )}
+
+        {github && (
+            <div class="flex items-center justify-center">
+                <h3 class="mr-2">Repo:</h3>
+                <a href={github} class="flex items-center justify-center rounded-full text-s bg-gray-800 text-white py-1 px-2">
+                    <div class="rounded-full bg-white p-2 mr-2 hover:scale-110">
+                        <Github class="size-5 text-gray-800" />
+                    </div>
+                </a>
+            </div>
+        )}
+
+            </div>
+        </article>
+    ))
+}
+
+
+
