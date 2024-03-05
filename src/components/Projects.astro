@@ -11,6 +11,8 @@ import Link from './icons/Link.astro'
 import Tailwind from './icons/Tailwind.astro'
 import Typescript from './icons/Typescript.astro'
 import Nextjs from './icons/Nextjs.astro'
+import MySQL from './icons/MySQL.astro'
+import Prisma from './icons/Prisma.astro'
 
 const TAGS = {
     REACT: {
@@ -63,9 +65,27 @@ const TAGS = {
         class: "bg-black text-white",
         icon: Vite
     },
+    MySQL: {
+        name: "MySQL",
+        class: "bg-sky-300/80",
+        icon: MySQL,
+    },
+    PRISMA: {
+        name: "Prisma",
+        class: "bg-green-700 text-white",
+        icon: Prisma,
+    },
 }
 
 const PROJECTS = [
+    {
+        title: 'Taskify',
+        description: 'Created from scratch with React, tailwind, Prisma, Stripe, MySQL and Next.Js it is a clone of the popular aplication of trello. Here you can Manage the task of your organization. You can access for free with your social media.',
+        link: 'https://trello-clone-cmaq7o49k-andresfrlas-projects.vercel.app/',
+        github: 'https://github.com/Andresfrla/trello-clone',
+        image: '/projects/taskify.webp',
+        tags: [TAGS.REACT, TAGS.NEXTJS, TAGS.MySQL, TAGS.PRISMA , TAGS.TAILWIND],
+    },
     {
         title: 'DigitalHippo',
         description: 'Created from scratch with React and Next.Js.Developed a full-stack RESTful application that is a Ecommerce where you can buy and sell assets of quality and have the integration with stripe.',
