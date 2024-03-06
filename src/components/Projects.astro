@@ -13,6 +13,7 @@ import Typescript from './icons/Typescript.astro'
 import Nextjs from './icons/Nextjs.astro'
 import MySQL from './icons/MySQL.astro'
 import Prisma from './icons/Prisma.astro'
+import Javascript from './icons/Javascript.astro'
 
 const TAGS = {
     REACT: {
@@ -24,6 +25,11 @@ const TAGS = {
         name: "TypeScript",
         class: "bg-zinc-100 text-blue",
         icon: Typescript,
+    },
+    JAVASCRIPT: {
+        name: "Javascript",
+        class: "bg-amber-950 text-yellow-200",
+        icon: Javascript,
     },
     NEXTJS: {
         name: "Next Js",
@@ -108,7 +114,7 @@ const PROJECTS = [
         link: 'https://andresfrla.github.io/vampires-vs-zombies/',
         github: 'https://github.com/Andresfrla/vampires-vs-zombies',
         image: '/projects/vampires.webp',
-        tags: [TAGS.HTML, TAGS.CSS]
+        tags: [TAGS.HTML, TAGS.CSS, TAGS.JAVASCRIPT]
     },
     {
         title: 'Youtube Clone',
@@ -131,8 +137,8 @@ const PROJECTS = [
                 
                 {tags.map((tag) => (
                     <li>
-                        <span class={`flex flex-wrap gap-x-2 rounded-full sm:text-xxs md:text-s mb-2 mt-3 ${tag.class} py-1 px-2`}>
-                            <tag.icon class={`size-5 ${'sm:text-xxs'}`} />
+                        <span class={`flex flex-wrap gap-x-2 rounded-full sm:text-xxs md:text-s mb-2 mt-3 sm:mb-1 sm:mt-3 ${tag.class} py-1 px-2 sm:py-0.5 sm:px-1`}>
+                            <tag.icon class={`size-4 ${'sm:text-xxs'} mt-1 ml-1`} />
                             {tag.name}
                         </span>
                     </li>
