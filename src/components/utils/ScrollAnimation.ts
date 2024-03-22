@@ -1,4 +1,4 @@
-function handleVisibility(entries, observer) {
+function handleVisibility(entries: IntersectionObserverEntry[], observer:  IntersectionObserver): void {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             const classesToAdd = ['animate-fade-right', 'animate-once', 'animate-duration-[3000ms]'];
