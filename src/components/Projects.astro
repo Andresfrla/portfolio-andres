@@ -14,6 +14,7 @@ import Nextjs from './icons/Nextjs.astro'
 import MySQL from './icons/MySQL.astro'
 import Prisma from './icons/Prisma.astro'
 import Javascript from './icons/Javascript.astro'
+import Storybook from './icons/StoryBook.astro'
 
 const TAGS = {
     REACT: {
@@ -23,8 +24,13 @@ const TAGS = {
     },
     TYPESCRIPT: {
         name: "TypeScript",
-        class: "bg-zinc-100 text-blue",
+        class: "bg-zinc-100 text-blue-800",
         icon: Typescript,
+    },
+    STORYBOOK: {
+        name: "StoryBook",
+        class: "bg-pink-200 text-black",
+        icon: Storybook,
     },
     JAVASCRIPT: {
         name: "Javascript",
@@ -85,6 +91,13 @@ const TAGS = {
 
 const PROJECTS = [
     {
+        title: 'UIForge Design 🎈',
+        description: 'Created from scratch using React, TypeScript, Vite, and TailwindCSS, UIForge Design is a robust design system available as an NPM package. It features a comprehensive collection of reusable components, enabling seamless integration into your projects. With its modern styling powered by TailwindCSS and developer-friendly architecture, UIForge Design simplifies building consistent and efficient UIs.',
+        link: 'https://ui-forge-design.vercel.app',
+        github: 'https://github.com/Andresfrla/UIForge-design',
+        image: '/projects/UIforge.webp',
+        tags: [TAGS.REACT, TAGS.VITE, TAGS.TYPESCRIPT, TAGS.STORYBOOK , TAGS.TAILWIND],
+    },{
         title: 'Taskify 📝',
         description: 'Created from scratch with React, tailwind, Prisma, Stripe, MySQL and Next.Js it is a clone of the popular aplication of trello. Here you can Manage the task of your organization. You can access for free with your social media.',
         link: 'https://trello-clone-wine-eight.vercel.app/',
@@ -107,14 +120,6 @@ const PROJECTS = [
         github: 'https://github.com/Andresfrla/country-page-world-rank',
         image: '/projects/country-rank.webp',
         tags: [TAGS.REACT, TAGS.NEXTJS, TAGS.JAVASCRIPT, TAGS.TAILWIND],
-    },
-    {
-        title: 'LOL-Wiki 👹',
-        description: 'This project is a dynamic app designed to tap into the League of Legends API. Developed using Bootstrap and Handlebars, the app presents a user-friendly interface that brings detailed game insights to the players',
-        link: '',
-        github: 'https://github.com/Andresfrla/LOL-Wiki',
-        image: '/projects/LOL.webp',
-        tags: [TAGS.HANDLEBARS, TAGS.HTML, TAGS.CSS]
     },
     {
         title: 'Vampire VS Zombies 🧛 🧟',
