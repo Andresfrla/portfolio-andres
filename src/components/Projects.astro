@@ -16,6 +16,7 @@ import Prisma from './icons/Prisma.astro'
 import Javascript from './icons/Javascript.astro'
 import Storybook from './icons/StoryBook.astro'
 
+
 const TAGS = {
     REACT: {
         name: "React.Js",
@@ -97,6 +98,7 @@ const PROJECTS = [
         github: 'https://github.com/Andresfrla/UIForge-design',
         image: '/projects/UIforge.webp',
         tags: [TAGS.REACT, TAGS.VITE, TAGS.TYPESCRIPT, TAGS.STORYBOOK , TAGS.TAILWIND],
+        download: "/projects/logo.png"
     },{
         title: 'Taskify 📝',
         description: 'Created from scratch with React, tailwind, Prisma, Stripe, MySQL and Next.Js it is a clone of the popular aplication of trello. Here you can Manage the task of your organization. You can access for free with your social media.',
@@ -143,7 +145,7 @@ const PROJECTS = [
     {/* Add comment*/}
 
 {
-    PROJECTS.map(({ title, description, tags, image, link, github }) => (
+    PROJECTS.map(({ title, description, tags, image, link, github, download }) => (
         <article class="mb-20">
             <h3 class="text-2xl font-semibold text-yellow-200 mb-2">{title}</h3>
             <p class="text-lg mb-4 text-pretty text-justify">{description}</p>
@@ -160,7 +162,21 @@ const PROJECTS = [
                 ))}
             </ul>
             <img class="rounded shadow-2xl shadow-white/20 mb-10 animate-scroll" src={image} alt={`Screenshot of the project ${title}`} />
+            
+                
+            {download && (
+                <div class="flex items-center justify-center my-20">
+                    <img 
+                        class="rounded-full shadow-2xl shadow-white/20 mb-10 animate-scroll max-w-full h-auto size-[500px]"
+                        src={download}
+                        alt={`Screenshot of the project ${title}`}
+                    />
+                </div>
+            )}
             <div class="items-center flex justify-center mb-5">
+
+        
+
         {link && (
             <div class="flex items-center justify-center mr-20">
                 <h3 class="mr-2">Link:</h3>
