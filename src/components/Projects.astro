@@ -147,14 +147,16 @@ const PROJECTS = [
 {
     PROJECTS.map(({ title, description, tags, image, link, github, download }) => (
         <article class="mb-20">
-            <h3 class="text-2xl font-semibold text-yellow-200 mb-2">{title}</h3>
+            <h3 class="text-2xl font-semibold text-yellow-200 mb-2">
+                <a href={link} target="_blank"> {title}</a>
+            </h3>
             <p class="text-lg mb-4 text-pretty text-justify">{description}</p>
             <p class="text-red-300/90">Used technologies:</p>
-            <ul class="flex gap-x-2 lg:flex-row mb-5 sm:flex-wrap">
+            <ul class="flex gap-x-2 lg:flex-row mb-5 flex-wrap">
                 
                 {tags.map((tag) => (
                     <li>
-                        <span class={`flex flex-wrap gap-x-2 rounded-full sm:text-xxs md:text-s mb-2 mt-3 sm:mb-1 sm:mt-3 ${tag.class} py-1 px-2 sm:py-0.5 sm:px-1 hover:animate-jump`}>
+                        <span class={`flex flex-wrap gap-x-2 rounded-full sm:text-xxs md:text-s mb-2 mt-3 sm:mb-1 sm:mt-3 ${tag.class} px-4 py-2 hover:animate-jump`}>
                             <tag.icon class={`size-4 ${'sm:text-xxs'} mt-1 ml-1`} />
                             {tag.name}
                         </span>
@@ -179,20 +181,20 @@ const PROJECTS = [
     <button
     onclick="navigator.clipboard.writeText('npm i ui-forge-design').then(() => alert('Text Copy!'))"
     class="flex items-center justify-center rounded-xl bg-gray-500 text-white hover:bg-gray-600 px-3 py-2 ml-20"
->
+    >
     <svg fill="#FFFFFF" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
 	 width="20px" height="20px" viewBox="0 0 93.842 93.843"
 	 xml:space="preserve">
-<g>
+    <g>
 	<path d="M74.042,11.379h-9.582v-0.693c0-1.768-1.438-3.205-3.206-3.205h-6.435V3.205C54.819,1.437,53.381,0,51.614,0H42.23
 		c-1.768,0-3.206,1.438-3.206,3.205V7.48H32.59c-1.768,0-3.206,1.438-3.206,3.205v0.693h-9.582c-2.393,0-4.339,1.945-4.339,4.34
 		v73.785c0,2.394,1.946,4.34,4.339,4.34h54.238c2.394,0,4.339-1.946,4.339-4.34V15.719C78.38,13.324,76.434,11.379,74.042,11.379z
 		 M32.617,25.336h28.61c1.709,0,3.102-1.391,3.102-3.1v-3.438h7.554l0.021,68.164l-49.939,0.021V18.801h7.554v3.436
 		C29.517,23.945,30.907,25.336,32.617,25.336z"/>
-</g>
-</svg>
-</button>
-</div>
+    </g>
+    </svg>
+    </button>
+    </div>
 
                 </div>
             )}
@@ -201,23 +203,23 @@ const PROJECTS = [
         
 
         {link && (
-            <div class="flex items-center justify-center mr-20">
-                <h3 class="mr-2">Link:</h3>
-                <a href={link} class="flex items-center justify-center rounded-full text-s bg-blue-500 text-white py-1 px-2" target="_blank">
-                    <div class="rounded-full bg-white p-2 mr-2 hover:animate-jump">
-                        <Link class="size-5 text-blue-500" />
+            <div class="flex items-center justify-center mr-20  hover:animate-jump">
+                <a href={link} class="flex items-center justify-center rounded-full text-s bg-blue-500 text-white py-2 px-4" target="_blank">
+                    <div class="rounded-full bg-white p-2 mr-2">
+                        <Link class="size-4 text-blue-500" />
                     </div>
+                    <h3 class="mr-2">Link</h3>
                 </a>
             </div>
         )}
 
         {github && (
-            <div class="flex items-center justify-center">
-                <h3 class="mr-2">Repo:</h3>
-                <a href={github} class="flex items-center justify-center rounded-full text-s bg-gray-800 text-white py-1 px-2" target="_blank">
-                    <div class="rounded-full bg-white p-2 mr-2 hover:animate-jump">
-                        <Github class="size-5 text-gray-800" />
+            <div class="flex items-center justify-center  hover:animate-jump">
+                <a href={github} class="flex items-center justify-center rounded-full text-s bg-gray-800 text-white py-2 px-4" target="_blank">
+                    <div class="rounded-full bg-white p-2 mr-2">
+                        <Github class="size-4 text-gray-800" />
                     </div>
+                <h3 class="mr-2">Repository</h3>
                 </a>
             </div>
         )}
