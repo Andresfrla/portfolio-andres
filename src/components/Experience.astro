@@ -1,36 +1,27 @@
 ---
-import ExperienceItem from "./ExperienceItem.astro"
+import ListItem from "./ListItem.astro"
 
-const EXPERIENCIE = [
+const EXPERIENCE = [
   {
-    date: "January - 2024",
-    title: "Meta Front-End Developer Certificate",
+    date: "November 2023 - Present",
+    title: "Frontend Developer-Freelance",
     description:
-      `Earning this certificate by completing its 7 courses provided me with comprehensive understanding of UX/UI principles and practical use of Git/GitHub for version control.
-        Successfully completing the 7-course program for this certificate allowed me to master UX/UI design and confidently manage code versions using Git and GitHub.`,
-    image: 'https://images.credly.com/size/680x680/images/e91ed0b0-842b-417f-8d2f-b07535febdda/image.png'
+      `Worked remotely maintaining and improving React interfaces for local small businesses. Adapted existing components, corrected styles using Tailwind CSS, and implemented simple forms with basic validations to ensure smooth user flows. Collaborated directly with clients to transform requirements into functional applications.`,
   },
   {
-    date: "April - September 2023",
-    title: "Bootcamp Web Developer  − IronHack",
+    date: "August - 2024 to December 2024",
+    title: "Frontend Developer-Freelance (T-Bit bots)",
     description:
-      `Over six intensive months at Ironhack (April 2023 - September 2023), I gained a comprehensive understanding of both front-end and back-end development, mastering a diverse toolkit of technologies, including:
-
-Front-End Expertise: JavaScript, React, HTML5, CSS3
-Back-End Proficiency: MongoDB
-Collaboration and Community:
-
-Ironhack's collaborative and project-based approach fostered my ability to work effectively within teams, communicate technical concepts clearly, and navigate the challenges of software development with problem-solving prowess. I actively participated in various groups and discussions, embracing the opportunity to learn from and alongside my peers.`,
-    image: 'https://images.credential.net/embed/40k29oui.png'
+      `I maintained and enhanced React interfaces for local small businesses by adapting existing components and refining styles with Tailwind CSS. I implemented simple forms with basic validations to ensure smooth user flows, and collaborated directly with clients to translate their requirements into functional applications.`,
   },
 ]
 ---
 
 <ol class="relative border-s border-gray-200 ml-3">
   {
-    EXPERIENCIE.map((experiencie) => (
+    EXPERIENCE.map((experience) => (
       <li class="mb-10 ms-4">
-        <ExperienceItem {...experiencie} />
+        <ListItem {...experience} />
       </li>
     ))
   }

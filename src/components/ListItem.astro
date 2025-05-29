@@ -3,7 +3,7 @@
         title: string
         description: string
         date: string
-        image: string
+        image?: string
     }
     const { title, description, date , image} = Astro.props
 ---
@@ -13,6 +13,6 @@
     <time class="mb-1 text-sm font-normal leading-none text-white-400 dark:text-white-500">{date}</time>
     <h3 class="text-lg font-semibold text-yellow-200 dark:text-white py-2">{title}</h3>
     <p class="text-base font-normal text-gray-300 text-justify dark:text-gray-400">{description}</p>
-    <img class="h-40 mx-auto mt-4 animate-scroll" src={image} alt={title}>
+    {image && <img class="h-40 mx-auto mt-4 animate-scroll" src={image} alt={title}>}
 </li>
 

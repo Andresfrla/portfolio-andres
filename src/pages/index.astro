@@ -6,12 +6,14 @@ import GithubIcon from '../components/icons/Github.astro';
 import GmailIcon from '../components/icons/Gmail.astro'
 import Certificate from '../components/icons/Certificate.astro'
 import SocialPill from "../components/SocialPill.astro"
-import Experience from '../components/Experience.astro';
+import Certificates from '../components/Certificates.astro';
 import SectionContainer from '../components/SectionContainer.astro';
 import Code from '../components/icons/Code.astro';
 import Projects from '../components/Projects.astro';
 import Phone from '../components/icons/Phone.astro';
 import Download from '../components/icons/Download.astro';
+import Experience from '../components/Experience.astro';
+import Work from '../components/icons/Work.astro';
 ---
 
 <Layout
@@ -33,8 +35,11 @@ description="Hire a good programmer for your web or your mobile App">
 			class="flex justify-center items-center hover:animate-ping"
 			>
 				<Badge> Available for hire</Badge></a></div></h1>
-			<h2 class="text-xl lg:text-2xl opacity-80 text-wrap max-w-[700px] justifify-content">+7 years of Professional experience. <span class="text-red-300/90">Web Developer and business Administrator.</span>
-			<span class="text-yellow-200">From Bogota Colombia living in Mexico City.</span> I recently complete the Professional Certification of Meta.
+			<h2 class="text-xl lg:text-2xl opacity-80 text-justify max-w-[700px] justify-content">
+  			Frontend Developer with ~2 years of hands-on experience using <span class="text-red-300/90">React, JavaScript (ES6+), and Tailwind CSS</span>, 
+  			complemented by 8+ years leading sales teams and commercial operations. 
+  			<span class="text-yellow-200">From Bogotá, Colombia — now based in Mexico City.</span> 
+  			I specialize in translating business goals into intuitive, scalable digital solutions, combining strong technical execution with strategic insight to drive product growth and elevate user experience.
 			</h2>
 
 			<nav class="flex gap-4 mt-8 flex-wrap">
@@ -53,12 +58,20 @@ description="Hire a good programmer for your web or your mobile App">
 			</nav>
 		</SectionContainer>
 
-		<SectionContainer id="experience">
+		<SectionContainer id="experiences">
+			<h2 class="text-2xl font-semibold mb-6 flex gap-x-3 item-center">
+				<Work class="size-8"/>
+				Experience
+			</h2>
+			<Experience />
+		</SectionContainer>
+
+		<SectionContainer id="certificates">
 			<h2 class="text-2xl font-semibold mb-6 flex gap-x-3 item-center">
 				<Certificate class="size-8"/>
 				Certificates
 			</h2>
-			<Experience />
+			<Certificates />
 		</SectionContainer>
 
 		<SectionContainer id="projects">

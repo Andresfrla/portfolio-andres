@@ -1,12 +1,12 @@
 function handleVisibility(entries: IntersectionObserverEntry[], observer:  IntersectionObserver): void {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
-            const classesToAdd = ['animate-fade-right', 'animate-once', 'animate-duration-[3000ms]'];
+            const classesToAdd = ['animate-fade-up', 'animate-once', 'animate-duration-[3000ms]'];
             classesToAdd.forEach(className => {
                 entry.target.classList.add(className);
             });
         } else {
-            const classesToRemove = ['animate-fade-right', 'animate-once', 'animate-duration-[3000ms]'];
+            const classesToRemove = ['animate-fade-up', 'animate-once', 'animate-duration-[3000ms]'];
             classesToRemove.forEach(className => {
                 entry.target.classList.remove(className);
             });
