@@ -14,11 +14,16 @@ import Phone from '../components/icons/Phone.astro';
 import Download from '../components/icons/Download.astro';
 import Experience from '../components/Experience.astro';
 import Work from '../components/icons/Work.astro';
+import LanguageManager from '../components/LanguageManager.jsx';
 ---
 
 <Layout
 title="Portfolio -Andres Franco L- Programmer and Web Developer"
 description="Hire a good programmer for your web or your mobile App">
+	
+	<!-- Selector de idioma -->
+	<LanguageManager client:load/>
+	
 	<main class="px-4">
 		<SectionContainer class="py-44 pb-24">
 			<div class="flex justify-center">
@@ -27,33 +32,35 @@ description="Hire a good programmer for your web or your mobile App">
     		alt="Andres">
 			</div>
 			<h1 class="text-white text-3xl md:text-4xl lg:text-5xl font-bold flex justify-start flex-row gap-x-4 pb-6 lg:pb-10">
-			Hi I'm Andres <div class="flex justify-center items-center">
+			<span id="greeting">Hola, soy Andres</span> <div class="flex justify-center items-center">
 			<a
 			href="https://www.linkedin.com/in/andresfrancolangthon/"
 			target="_blank"
 			rel="noopener"
 			class="flex justify-center items-center hover:animate-ping"
 			>
-				<Badge> Available for hire</Badge></a></div></h1>
+				<Badge><span id="available-badge">Disponible para contratación</span></Badge></a></div></h1>
+			
 			<h2 class="text-xl lg:text-2xl opacity-80 text-justify max-w-[700px] justify-content">
-  			Frontend Developer with ~2 years of hands-on experience using <span class="text-red-300/90">React, JavaScript (ES6+), and Tailwind CSS</span>, 
-  			complemented by 8+ years leading sales teams and commercial operations. 
-  			<span class="text-yellow-200">From Bogotá, Colombia — now based in Mexico City.</span> 
-  			I specialize in translating business goals into intuitive, scalable digital solutions, combining strong technical execution with strategic insight to drive product growth and elevate user experience.
+  			<span id="bio-start">Desarrollador Frontend con ~2 años de experiencia práctica usando</span> 
+  			<span class="text-red-300/90">React, JavaScript (ES6+), y Tailwind CSS</span>, 
+  			<span id="bio-middle">complementado por 8+ años liderando equipos de ventas y operaciones comerciales.</span> 
+  			<span class="text-yellow-200" id="bio-location">Desde Bogotá, Colombia — ahora radicado en Ciudad de México.</span> 
+  			<span id="bio-end">Me especializo en traducir objetivos de negocio en soluciones digitales intuitivas y escalables, combinando una fuerte ejecución técnica con perspicacia estratégica para impulsar el crecimiento del producto y elevar la experiencia del usuario.</span>
 			</h2>
 
 			<nav class="flex gap-4 mt-8 flex-wrap">
 					<SocialPill href="https://www.linkedin.com/in/andresfrancolangthon/">
-						<LinkedinIcon class="size-4 lg:size-6"/>LinkedIn </svg>
+						<LinkedinIcon class="size-4 lg:size-6"/>LinkedIn
 					</SocialPill>
 					<SocialPill href="https://github.com/Andresfrla">
-						<GithubIcon class="size-4 lg:size-6"/>Github </svg>
+						<GithubIcon class="size-4 lg:size-6"/>Github
 					</SocialPill>
 					<SocialPill href="mailto:andresfranla@gmail.com">
-						<GmailIcon class="size-4 lg:size-6"/>andresfranla@gmail.com </svg>
+						<GmailIcon class="size-4 lg:size-6"/>andresfranla@gmail.com
 					</SocialPill>
 					<SocialPill href="https://drive.google.com/file/d/1SjZksltRKK7pujRZM70GclVWws53qpTn/view?usp=drive_link">
-						<Download class="size-4 lg:size-6 animate-bounce"/>Download My Cv </svg>
+						<Download class="size-4 lg:size-6 animate-bounce"/><span id="download-cv">Descargar Mi CV</span>
 					</SocialPill>
 			</nav>
 		</SectionContainer>
@@ -61,7 +68,7 @@ description="Hire a good programmer for your web or your mobile App">
 		<SectionContainer id="experiences">
 			<h2 class="text-2xl font-semibold mb-6 flex gap-x-3 item-center">
 				<Work class="size-8"/>
-				Experience
+				<span id="experience-title">Experiencia</span>
 			</h2>
 			<Experience />
 		</SectionContainer>
@@ -69,7 +76,7 @@ description="Hire a good programmer for your web or your mobile App">
 		<SectionContainer id="certificates">
 			<h2 class="text-2xl font-semibold mb-6 flex gap-x-3 item-center">
 				<Certificate class="size-8"/>
-				Certificates
+				<span id="certificates-title">Certificados</span>
 			</h2>
 			<Certificates />
 		</SectionContainer>
@@ -77,30 +84,29 @@ description="Hire a good programmer for your web or your mobile App">
 		<SectionContainer id="projects">
 			<h2 class="text-2xl font-semibold mb-6 flex gap-x-3 item-center">
 				<Code class="size-7"/>
-				Projects
+				<span id="projects-title">Proyectos</span>
 			</h2>
 			<Projects/>
 		</SectionContainer>
 
 		<SectionContainer id="contact">
 			<h2 class="text-white text-3xl md:text-4xl lg:text-5xl font-bold flex justify-start flex-row gap-x-4 pb-6 lg:pb-10">
-				Let's get in touch
+				<span id="contact-title">Contactemos</span>
 			</h2>
 			<div class="flex gap-4 mt-8 flex-col">
 				<a class="flex flex-row mb-2" href="mailto:andresfranla@gmail.com ">
-					<GmailIcon class="size-4 lg:size-6 mr-2 animate-bounce animate-infinite"/> andresfranla@gmail.com </svg>
+					<GmailIcon class="size-4 lg:size-6 mr-2 animate-bounce animate-infinite"/> andresfranla@gmail.com
 				</a>
 				<div class="flex flex-row mb-2">
-					<Phone class="size-4 lg:size-6 mr-2 animate-wiggle animate-infinite"/> +52 56 450 344 82 </svg>
+					<Phone class="size-4 lg:size-6 mr-2 animate-wiggle animate-infinite"/> +52 56 450 344 82
 				</div>
 				<a class="flex flex-row mb-2" href="https://github.com/Andresfrla">
-					<GithubIcon class="size-4 lg:size-6 mr-2"/> Github </svg>
+					<GithubIcon class="size-4 lg:size-6 mr-2"/> Github
 				</a>
 				<a class="flex flex-row mb-2" href="https://www.linkedin.com/in/andresfrancolangthon/">
-					<LinkedinIcon class="size-4 lg:size-6 mr-2"/> Linkedin </svg>
+					<LinkedinIcon class="size-4 lg:size-6 mr-2"/> Linkedin
 				</a>
 			</div>
 		</SectionContainer>
 	</main>
 </Layout>
-

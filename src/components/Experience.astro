@@ -4,15 +4,23 @@ import ListItem from "./ListItem.astro"
 const EXPERIENCE = [
   {
     date: "November 2023 - Present",
+    dateEs: "Noviembre 2023 - Presente",
     title: "Frontend Developer-Freelance",
+    titleEs: "Desarrollador Frontend-Freelance",
     description:
       `Worked remotely maintaining and improving React interfaces for local small businesses. Adapted existing components, corrected styles using Tailwind CSS, and implemented simple forms with basic validations to ensure smooth user flows. Collaborated directly with clients to transform requirements into functional applications.`,
+    descriptionEs:
+      `Trabajé de forma remota manteniendo y mejorando interfaces React para pequeñas empresas locales. Adapté componentes existentes, corregí estilos usando Tailwind CSS, e implementé formularios simples con validaciones básicas para asegurar flujos de usuario fluidos. Colaboré directamente con clientes para transformar requisitos en aplicaciones funcionales.`,
   },
   {
-    date: "August - 2024 to December 2024",
+    date: "August 2024 to December 2024",
+    dateEs: "Agosto 2024 a Diciembre 2024",
     title: "Frontend Developer-Freelance (T-Bit bots)",
+    titleEs: "Desarrollador Frontend-Freelance (T-Bit bots)",
     description:
       `I maintained and enhanced React interfaces for local small businesses by adapting existing components and refining styles with Tailwind CSS. I implemented simple forms with basic validations to ensure smooth user flows, and collaborated directly with clients to translate their requirements into functional applications.`,
+    descriptionEs:
+      `Mantuve y mejoré interfaces React para pequeñas empresas locales adaptando componentes existentes y refinando estilos con Tailwind CSS. Implementé formularios simples con validaciones básicas para asegurar flujos de usuario fluidos, y colaboré directamente con clientes para traducir sus requisitos en aplicaciones funcionales.`,
   },
 ]
 ---
@@ -20,9 +28,7 @@ const EXPERIENCE = [
 <ol class="relative border-s border-gray-200 ml-3">
   {
     EXPERIENCE.map((experience) => (
-      <li class="mb-10 ms-4">
-        <ListItem {...experience} />
-      </li>
+      <ListItem {...experience} />
     ))
   }
 </ol>

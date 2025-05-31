@@ -7,18 +7,38 @@ import Contact from "./icons/Contact.astro";
   <nav class="flex flex-row gap-x-6 bg-black rounded-md p-3 items-center">
     
     <a href="#top" class="block sm:hidden">
-      <Home class="w-5 h-5"/>
+      <Home class="w-5 h-5" />
     </a>
-    <a href="#top" class="hidden sm:block text-sm sm:text-base hover:font-bold">Home</a>
 
-    <a href="#experiences" class="text-sm sm:text-base hover:font-bold">Experience</a>
-    <a href="#certificates" class="text-sm sm:text-base hover:font-bold">Certificates</a>
-    <a href="#projects" class="text-sm sm:text-base hover:font-bold">Projects</a>
+    <a href="#top" class="hidden sm:block text-sm sm:text-base hover:font-bold">
+      <span class="en-text">Home</span>
+      <span class="es-text hidden">Inicio</span>
+    </a>
+
+    <a href="#experiences" class="text-sm sm:text-base hover:font-bold">
+      <span class="en-text">Experience</span>
+      <span class="es-text hidden">Experiencia</span>
+    </a>
+
+    <a href="#certificates" class="text-sm sm:text-base hover:font-bold">
+      <span class="en-text">Certificates</span>
+      <span class="es-text hidden">Certificados</span>
+    </a>
+
+    <a href="#projects" class="text-sm sm:text-base hover:font-bold">
+      <span class="en-text">Projects</span>
+      <span class="es-text hidden">Proyectos</span>
+    </a>
 
     <a href="#contact" class="block sm:hidden">
-      <Contact class="w-5 h-5"/>
+      <Contact class="w-5 h-5" />
     </a>
-    <a href="#contact" class="hidden sm:block text-sm sm:text-base hover:font-bold">Contact</a>
+
+    <a href="#contact" class="hidden sm:block text-sm sm:text-base hover:font-bold">
+      <span class="en-text">Contact</span>
+      <span class="es-text hidden">Contacto</span>
+    </a>
 
   </nav>
 </header>
+

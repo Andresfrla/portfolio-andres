@@ -16,7 +16,6 @@ import Prisma from './icons/Prisma.astro'
 import Javascript from './icons/Javascript.astro'
 import Storybook from './icons/StoryBook.astro'
 
-
 const TAGS = {
     REACT: {
         name: "React.Js",
@@ -93,15 +92,23 @@ const TAGS = {
 const PROJECTS = [
     {
         title: 'UIForge Design 🎈',
+        titleEs: 'UIForge Design 🎈',
         description: 'Created from scratch using React, TypeScript, Vite, and TailwindCSS, UIForge Design is a robust design system available as an NPM package. It features a comprehensive collection of reusable components, enabling seamless integration into your projects. With its modern styling powered by TailwindCSS and developer-friendly architecture, UIForge Design simplifies building consistent and efficient UIs.',
+        descriptionEs: 'Creado desde cero usando React, TypeScript, Vite y TailwindCSS, UIForge Design es un sistema de diseño robusto disponible como paquete NPM. Cuenta con una colección integral de componentes reutilizables, permitiendo una integración perfecta en tus proyectos. Con su estilo moderno impulsado por TailwindCSS y arquitectura amigable para desarrolladores, UIForge Design simplifica la construcción de interfaces de usuario consistentes y eficientes.',
         link: 'https://ui-forge-design.vercel.app',
         github: 'https://github.com/Andresfrla/UIForge-design',
         image: '/projects/UIforge.webp',
         tags: [TAGS.REACT, TAGS.VITE, TAGS.TYPESCRIPT, TAGS.STORYBOOK , TAGS.TAILWIND],
-        download: "/projects/logo.png"
+        download: "/projects/logo.png",
+        installText: "Install the library on npm:",
+        installTextEs: "Instala la librería en npm:",
+        copyText: "Text Copy!",
+        copyTextEs: "¡Texto Copiado!"
     },{
         title: 'Taskify 📝',
+        titleEs: 'Taskify 📝',
         description: 'Created from scratch with React, tailwind, Prisma, Stripe, MySQL and Next.Js it is a clone of the popular aplication of trello. Here you can Manage the task of your organization. You can access for free with your social media.',
+        descriptionEs: 'Creado desde cero con React, Tailwind, Prisma, Stripe, MySQL y Next.js, es un clon de la popular aplicación Trello. Aquí puedes gestionar las tareas de tu organización. Puedes acceder gratis con tus redes sociales.',
         link: 'https://trello-clone-wine-eight.vercel.app/',
         github: 'https://github.com/Andresfrla/trello-clone',
         image: '/projects/taskify.webp',
@@ -109,7 +116,9 @@ const PROJECTS = [
     },
     {
         title: 'Country Quiz 🌎',
+        titleEs: 'Quiz de Países 🌎',
         description: 'Make from stratch this app is consuming API to have information about different countries, this GAME is for your knowledge on geography. Are you ready for the challenge?',
+        descriptionEs: 'Hecho desde cero, esta aplicación consume una API para obtener información sobre diferentes países, este JUEGO es para tu conocimiento en geografía. ¿Estás listo para el desafío?',
         link: 'https://country-quiz-andresfrla.netlify.app/',
         github: 'https://github.com/Andresfrla/country-quiz',
         image: '/projects/country-quiz.webp',
@@ -117,7 +126,9 @@ const PROJECTS = [
     },
     {
         title: 'Country Rank 🌐',
+        titleEs: 'Ranking de Países 🌐',
         description: 'Using an API to get information, on this responsive app you can access to the information of different countries. This App was developing using NextJS and Tailwind CSS for the styling of the page.',
+        descriptionEs: 'Usando una API para obtener información, en esta aplicación responsiva puedes acceder a la información de diferentes países. Esta aplicación fue desarrollada usando NextJS y Tailwind CSS para el estilo de la página.',
         link: 'https://country-rank-andresfrla.netlify.app/',
         github: 'https://github.com/Andresfrla/country-page-world-rank',
         image: '/projects/country-rank.webp',
@@ -125,7 +136,9 @@ const PROJECTS = [
     },
     {
         title: 'Vampire VS Zombies 🧛 🧟',
+        titleEs: 'Vampiro VS Zombies 🧛 🧟',
         description: 'Navigate a world where a vampire avoids zombies using canvas-rendered visuals. Consume pumpkins to transform and turn the undead into your prey. A captivating game crafted with HTML, CSS, and JavaScript.',
+        descriptionEs: 'Navega por un mundo donde un vampiro evita zombies usando visuales renderizadas en canvas. Consume calabazas para transformarte y convertir a los muertos vivientes en tu presa. Un juego cautivador creado con HTML, CSS y JavaScript.',
         link: 'https://andresfrla.github.io/vampires-vs-zombies/',
         github: 'https://github.com/Andresfrla/vampires-vs-zombies',
         image: '/projects/vampires.webp',
@@ -133,27 +146,51 @@ const PROJECTS = [
     },
     {
         title: 'Translated.io 🔤',
+        titleEs: 'Translated.io 🔤',
         description: 'Using the changellenges from dev.challenges to make a pixel perfect page with funtionality using Next JS with tailwind CSS for the styles for tabelt and desktop devices',
+        descriptionEs: 'Usando los desafíos de dev.challenges para hacer una página pixel perfect con funcionalidad usando Next JS con Tailwind CSS para los estilos para dispositivos tablet y escritorio',
         link: 'https://profound-mermaid-2168f9.netlify.app/',
         github: 'https://github.com/Andresfrla/translate-app',
         image: '/projects/translate.webp',
         tags: [TAGS.REACT, TAGS.NEXTJS, TAGS.MONGODB, TAGS.TAILWIND],
     },
 ]
+
+// Textos estáticos para traducir
+const STATIC_TEXTS = {
+    usedTechnologies: {
+        en: "Used technologies:",
+        es: "Tecnologías utilizadas:"
+    },
+    link: {
+        en: "Link",
+        es: "Enlace"
+    },
+    repository: {
+        en: "Repository",
+        es: "Repositorio"
+    }
+}
 ---
 
-    {/* Add comment*/}
-
 {
-    PROJECTS.map(({ title, description, tags, image, link, github, download }) => (
+    PROJECTS.map(({ title, titleEs, description, descriptionEs, tags, image, link, github, download, installText, installTextEs, copyText, copyTextEs }) => (
         <article class="mb-20">
             <h3 class="text-2xl font-semibold text-yellow-200 mb-2">
-                <a href={link} target="_blank"> {title}</a>
+                <a href={link} target="_blank">
+                    <span class="en-text">{title}</span>
+                    <span class="es-text">{titleEs}</span>
+                </a>
             </h3>
-            <p class="text-lg mb-4 text-pretty text-justify">{description}</p>
-            <p class="text-red-300/90">Used technologies:</p>
+            <p class="text-lg mb-4 text-pretty text-justify">
+                <span class="en-text">{description}</span>
+                <span class="es-text">{descriptionEs}</span>
+            </p>
+            <p class="text-red-300/90">
+                <span class="en-text">{STATIC_TEXTS.usedTechnologies.en}</span>
+                <span class="es-text">{STATIC_TEXTS.usedTechnologies.es}</span>
+            </p>
             <ul class="flex gap-x-2 lg:flex-row mb-5 flex-wrap">
-                
                 {tags.map((tag) => (
                     <li>
                         <span class={`flex flex-wrap gap-x-2 rounded-full sm:text-xxs md:text-s mb-2 mt-3 sm:mb-1 sm:mt-3 ${tag.class} px-4 py-2 hover:animate-jump`}>
@@ -165,7 +202,6 @@ const PROJECTS = [
             </ul>
             <img class="rounded shadow-2xl shadow-white/20 mb-10 animate-scroll" src={image} alt={`Screenshot of the project ${title}`} />
             
-                
             {download && (
                 <div class="flex flex-col items-center justify-center my-20">
                     <img 
@@ -174,60 +210,66 @@ const PROJECTS = [
                         alt={`Screenshot of the project ${title}`}
                     />
 
-    <h4 class="text-2xl font-semibold text-yellow-200 mb-5">Install the library on npm:</h4>
-    
-    <div class="flex justify-between items-center bg-slate-800 rounded-xl py-2 px-5">
-    $ <span class="text-orange-400 px-2">npm </span> ui-forge-design
-    <button
-    onclick="navigator.clipboard.writeText('npm i ui-forge-design').then(() => alert('Text Copy!'))"
-    class="flex items-center justify-center rounded-xl bg-gray-500 text-white hover:bg-gray-600 px-3 py-2 ml-20"
-    >
-    <svg fill="#FFFFFF" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
-	 width="20px" height="20px" viewBox="0 0 93.842 93.843"
-	 xml:space="preserve">
-    <g>
-	<path d="M74.042,11.379h-9.582v-0.693c0-1.768-1.438-3.205-3.206-3.205h-6.435V3.205C54.819,1.437,53.381,0,51.614,0H42.23
-		c-1.768,0-3.206,1.438-3.206,3.205V7.48H32.59c-1.768,0-3.206,1.438-3.206,3.205v0.693h-9.582c-2.393,0-4.339,1.945-4.339,4.34
-		v73.785c0,2.394,1.946,4.34,4.339,4.34h54.238c2.394,0,4.339-1.946,4.339-4.34V15.719C78.38,13.324,76.434,11.379,74.042,11.379z
-		 M32.617,25.336h28.61c1.709,0,3.102-1.391,3.102-3.1v-3.438h7.554l0.021,68.164l-49.939,0.021V18.801h7.554v3.436
-		C29.517,23.945,30.907,25.336,32.617,25.336z"/>
-    </g>
-    </svg>
-    </button>
-    </div>
-
+                    <h4 class="text-2xl font-semibold text-yellow-200 mb-5">
+                        <span class="en-text">{installText}</span>
+                        <span class="es-text">{installTextEs}</span>
+                    </h4>
+                    
+                    <div class="flex justify-between items-center bg-slate-800 rounded-xl py-2 px-5">
+                        $ <span class="text-orange-400 px-2">npm </span> ui-forge-design
+                        <button
+                            onclick={`navigator.clipboard.writeText('npm i ui-forge-design').then(() => {
+                                const isSpanish = document.querySelector('.es-text').style.display !== 'none';
+                                const message = isSpanish ? '${copyTextEs}' : '${copyText}';
+                                alert(message);
+                            })`}
+                            class="flex items-center justify-center rounded-xl bg-gray-500 text-white hover:bg-gray-600 px-3 py-2 ml-20"
+                        >
+                            <svg fill="#FFFFFF" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+                                width="20px" height="20px" viewBox="0 0 93.842 93.843"
+                                xml:space="preserve">
+                                <g>
+                                    <path d="M74.042,11.379h-9.582v-0.693c0-1.768-1.438-3.205-3.206-3.205h-6.435V3.205C54.819,1.437,53.381,0,51.614,0H42.23
+                                        c-1.768,0-3.206,1.438-3.206,3.205V7.48H32.59c-1.768,0-3.206,1.438-3.206,3.205v0.693h-9.582c-2.393,0-4.339,1.945-4.339,4.34
+                                        v73.785c0,2.394,1.946,4.34,4.339,4.34h54.238c2.394,0,4.339-1.946,4.339-4.34V15.719C78.38,13.324,76.434,11.379,74.042,11.379z
+                                        M32.617,25.336h28.61c1.709,0,3.102-1.391,3.102-3.1v-3.438h7.554l0.021,68.164l-49.939,0.021V18.801h7.554v3.436
+                                        C29.517,23.945,30.907,25.336,32.617,25.336z"/>
+                                </g>
+                            </svg>
+                        </button>
+                    </div>
                 </div>
             )}
+            
             <div class="items-center flex justify-center mb-5">
-
-        
-
-        {link && (
-            <div class="flex items-center justify-center mr-20  hover:animate-jump">
-                <a href={link} class="flex items-center justify-center rounded-full text-s bg-blue-500 text-white py-2 px-4" target="_blank">
-                    <div class="rounded-full bg-white p-2 mr-2">
-                        <Link class="size-4 text-blue-500" />
+                {link && (
+                    <div class="flex items-center justify-center mr-20 hover:animate-jump">
+                        <a href={link} class="flex items-center justify-center rounded-full text-s bg-blue-500 text-white py-2 px-4" target="_blank">
+                            <div class="rounded-full bg-white p-2 mr-2">
+                                <Link class="size-4 text-blue-500" />
+                            </div>
+                            <h3 class="mr-2">
+                                <span class="en-text">{STATIC_TEXTS.link.en}</span>
+                                <span class="es-text">{STATIC_TEXTS.link.es}</span>
+                            </h3>
+                        </a>
                     </div>
-                    <h3 class="mr-2">Link</h3>
-                </a>
-            </div>
-        )}
+                )}
 
-        {github && (
-            <div class="flex items-center justify-center  hover:animate-jump">
-                <a href={github} class="flex items-center justify-center rounded-full text-s bg-gray-800 text-white py-2 px-4" target="_blank">
-                    <div class="rounded-full bg-white p-2 mr-2">
-                        <Github class="size-4 text-gray-800" />
+                {github && (
+                    <div class="flex items-center justify-center hover:animate-jump">
+                        <a href={github} class="flex items-center justify-center rounded-full text-s bg-gray-800 text-white py-2 px-4" target="_blank">
+                            <div class="rounded-full bg-white p-2 mr-2">
+                                <Github class="size-4 text-gray-800" />
+                            </div>
+                            <h3 class="mr-2">
+                                <span class="en-text">{STATIC_TEXTS.repository.en}</span>
+                                <span class="es-text">{STATIC_TEXTS.repository.es}</span>
+                            </h3>
+                        </a>
                     </div>
-                <h3 class="mr-2">Repository</h3>
-                </a>
-            </div>
-        )}
-
+                )}
             </div>
         </article>
     ))
 }
-
-
-
